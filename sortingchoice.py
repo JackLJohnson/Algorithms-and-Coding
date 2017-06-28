@@ -6,7 +6,7 @@ Code is to choose what type of sort is the best
 - There are a total of [n/k] number of sublists
 - Each sublist is of length k
 - To use both Mergesort and Insertion sort to find out which one is the best and at what point k
-- Find the time it take to run each function
+- Find the time it take to run each function 
 '''
 import re
 import numpy as np
