@@ -47,8 +47,10 @@ Sl no | Program Description                         | Language
 ------|---------------------------------------------|---------------
   1   | +-90 degree rotation of an 2d array in different ways checking the time/space complexity| Python 3.x
   2   | Return list of indices of two sum of an array given a target | Python 3.x
+  3   | Sorting Efficiently using Insertion sort, Mergesort or mixedsort | Python 3.x
 
 
 
 # CREDITS
   - pseudocode : http://users.csc.calpoly.edu/~jdalbey/SWE/pdl_std.html
+  - CLRS solutions references : http://clrs.skanev.com/
