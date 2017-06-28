@@ -50,11 +50,11 @@ def merge(A, p, q, r):
     j=0
     counter_array=0
 
-    #print("chk-1: The left and the right lists printed with n1 and n2 ", L, R, n1, n2)
+    print("chk-1: The left and the right lists printed with n1 and n2 ", L, R, n1, n2)
 
     for val in range(p,r):
         if (i<n1 and j<n2):
-            #print("chk-2:", i, j)
+            print("chk-2:", i, j)
             if (L[i] < R[j]):
                 A[val] = L[i]
                 i=i+1
@@ -64,7 +64,7 @@ def merge(A, p, q, r):
             counter_array = counter_array+1
 
     ## dump up the rest of array that is left to be traversed
-    #print("values of i, j", i, j)
+    print("values of i, j", i, j)
     if (i<n1):
         for k in range(0, n1-i):
             A[counter_array+k] = L[i+k]
@@ -73,13 +73,13 @@ def merge(A, p, q, r):
         for l in range(0, n2-j):
             A[counter_array+l] = R[j+l]
 
-    #print("chk-4, the array at stages", A)
+    print("chk-4, the array at stages", A)
 
 #Mergesort
 def Mergesort(A, p, r):
     if(p<r):
         q = int((p+r)/2)
-        #print("chk-3 the values sent here", A, p, q, r)
+        print("chk-3 the values sent here", A, p, q, r)
         Mergesort(A,p,q)
         Mergesort(A,q+1,r)
 
