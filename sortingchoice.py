@@ -6,11 +6,12 @@ Code is to choose what type of sort is the best
 - There are a total of [n/k] number of sublists
 - Each sublist is of length k
 - To use both Mergesort and Insertion sort to find out which one is the best and at what point k
-- Find the time it take to run each function 
+- Find the time it take to run each function
 '''
 import re
 import numpy as np
 import random
+import time
 
 def returncase(*args):
     for val in args:
@@ -49,8 +50,11 @@ def merge(A, p, q, r):
     j=0
     counter_array=0
 
-    for val in range(p,r+1):
-        if (i<=n1 and j<=n2):
+    #print("chk-1: The left and the right lists printed with n1 and n2 ", L, R, n1, n2)
+
+    for val in range(p,r):
+        if (i<n1 and j<n2):
+            #print("chk-2:", i, j)
             if (L[i] < R[j]):
                 A[val] = L[i]
                 i=i+1
@@ -60,17 +64,22 @@ def merge(A, p, q, r):
             counter_array = counter_array+1
 
     ## dump up the rest of array that is left to be traversed
-    if (i<=n1):
-        for k in range(0, n1-counter_array+1):
+    #print("values of i, j", i, j)
+    if (i<n1):
+        for k in range(0, n1-i):
             A[counter_array+k] = L[i+k]
 
-    if (j<=n2):
-        for l in range(0, n2-counter_array+1):
-            A[counter_array+l] = L[j+l]
+    if (j<n2):
+        for l in range(0, n2-j):
+            A[counter_array+l] = R[j+l]
 
+    #print("chk-4, the array at stages", A)
+
+#Mergesort
 def Mergesort(A, p, r):
     if(p<r):
         q = int((p+r)/2)
+        #print("chk-3 the values sent here", A, p, q, r)
         Mergesort(A,p,q)
         Mergesort(A,q+1,r)
 
@@ -89,6 +98,7 @@ def mixedsort(A, p, r):
 
             merge(A,p,q,r)  ## Merge to be done the usual way
 
+# Class for efficient sorting
 class efficientsorting(object):
     """docstring for efficientsorting."""
     def __init__(self):
@@ -102,11 +112,20 @@ class efficientsorting(object):
         #choicedict = {0:insertionsort(array, 0, int(size)), 1:Mergesort(array, 0, int(size)), 2:mixedsort(array, 0, int(size))}
         if ch in [0,1,2]:
             if ch==0:
-                insertionsort(array, 0, int(size))
+                t1 = time.time()
+                insertionsort(array, 0, int(size)-1)
+                t2 = time.time()
+                print("Time taken for insertionsort: {} \n".format(t2-t1))
             elif ch==1:
-                Mergesort(array, 0, int(size))
+                t1 = time.time()
+                Mergesort(array, 0, int(size)-1)
+                t2 = time.time()
+                print("Time taken for Mergesort: {} \n".format(t2-t1))
             else:
-                mixedsort(array, 0, int(size))
+                t1 = time.time()
+                mixedsort(array, 0, int(size)-1)
+                t1 = time.time()
+                print("Time taken for mixedsort: {} \n".format(t2-t1))
         else:
             return -1
         #insertionsort(array, 0, 7)
