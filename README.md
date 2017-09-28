@@ -54,3 +54,14 @@ Sl no | Program Description                         | Language
 # CREDITS
   - pseudocode : http://users.csc.calpoly.edu/~jdalbey/SWE/pdl_std.html
   - CLRS solutions references : http://clrs.skanev.com/
+
+# Coursera - algorithms-graphs-data-structures
+Suggested Readings :
+  + **CLRS - Cormen, Leiserson, Rivest, and Stein, Introduction to Algorithms (3rd edition)**
+  + **DPV - Dasgupta, Papadimitriou, and Vazirani, Algorithms**
+  + **KT - Kleinberg and Tardos, Algorithm Design**
+  + **SW - Sedgewick and Wayne, Algorithms (4th edition)**
+      - CLRS Chapter 22
+      - DPV Chapter 3
+      - KT Chapter 3, Section 3.5, 3.6
+      - SW Chapter 4, Section 4.1,4.2
