@@ -1,22 +1,22 @@
 '''
 Implementing the Kosaraju's Algorithm to find SCCs in a graph
 '''
-import urllib.request as url1
+#import urllib.request as url1
+import urllib as url1
 import os
 from os import path
 from collections import defaultdict
 import sys , time
-#import resource
+from collections import deque
+#!/usr/bin/env python3.6
 
+import resource
 #Increase recursion limit and stack size
-sys.setrecursionlimit(2 ** 20)
-#maxlimit = resource.getrlimit(resource.RLIMIT_STACK)[1]
-#resource.setrlimit(resource.RLIMIT_STACK,(maxlimit,maxlimit))
 
 GRAY=0 #visited
 BLACK=1 #finished
-#N=875714 #number of Nodes
-N=9
+N=875714 #number of Nodes
+#N=9
 
 class findScc(object):
     """docstring for findScc."""
@@ -39,7 +39,9 @@ class findScc(object):
 
     def processdata(self, path):
         file1 = open(path, "r+")
-        graph, graphrev = defaultdict(list),defaultdict(list)
+        graph, graphrev = {}, {}
+        for i in range(1, N+1):
+            graph[i], graphrev[i] = [], []
         for line in file1:
             graph[int(line.split(" ")[0].strip())].append(int(line.split(" ")[1].strip()))
             graphrev[int(line.split(" ")[1].strip())].append(int(line.split(" ")[0].strip()))
@@ -52,15 +54,21 @@ class findScc(object):
         leader = {}
         finished = {}
         self.DFSLoop(grev) #first pass
+        #print("After first pass", finished)
         # Reorder based on finishing times
         G_reord = {}
         g_val = list(g.values())
-        print(g_val)
-        for i in range(1, N+1):
+        #print(g_val[0:3])
+        sources = len(g_val) # This shows that all the nodes are not source nodes, but still it has to match
+        #print(sources, len(finished))
+        for i in range(1, sources+1):
+            #print("chkerr", i)
             temp = g_val[i-1]
             G_reord[finished[i]] = [finished[x] for x in temp]
+        #print("reordered", G_reord)
         # Run second DFS on the reordered G
         self.DFSLoop(G_reord)
+        #print(leader)
         return leader
 
 
@@ -74,9 +82,63 @@ class findScc(object):
         for i in range(N,0,-1):
             if explored[i]==0:
                 s=i
-                self.dfs(g,i)
+                #print("chk dfs entry",i)
+                #self.dfs(g,i)
+                self.dfsalt(g,i)
+                #print("return", finished)
         return
 
+    def dfs(self, g, i):
+        '''
+        For loop: recurssion
+        '''
+        global t
+        explored[i]=1
+        leader[i] =s #Think of this only for 2nd Pass
+        #print("chk", leader, explored,' ', t, " ", finished)
+        for j in g[i]:
+            if explored[j]==0:
+                self.dfs(g,j)
+        t+=1
+        finished[i]=t
+        return
+
+    def dfsalt(self, g, i):
+        '''
+        For loop might not be efficient, use a stack instead
+        '''
+        global t
+        #explored[i]=1
+        #leader[i]=s # Think of this for 2nd pass only
+        visited, stack, order = set(), [i], deque()
+        while stack:
+            vertex = stack.pop()
+            #print("chk1", vertex)
+            if vertex not in visited and explored[vertex]==0:
+                visited.add(vertex)
+                explored[vertex]=1
+                leader[vertex]=s
+                order.appendleft(vertex)
+                #print("chk2",set(g[vertex])-visited, order)
+                if len(set(g[vertex])-visited) ==0:
+                    t+=1
+                    finished[vertex]=t
+                    order.popleft()
+                stack.extend(set(g[vertex])-visited)
+        #get everything left in the deque popleft and fill up finished
+        while order:
+            t+=1
+            finished[order.popleft()]=t
+        #print("end", order, finished)
+        return
+
+    def topcommon(self, x,y):
+        from collections import Counter
+        c = Counter(x)
+        result = []
+        for number , count in c.most_common(y):
+            result.append(count)
+        return result
 
     def dfs1(self, g, start):
         '''
@@ -90,29 +152,7 @@ class findScc(object):
                 stack.extend(g[vertex]-visited)
         return visited
 
-    def dfs(self, g, i):
-        '''
-        For loop: recurssion
-        '''
-        global t
-        explored[i]=1
-        leader[i] =s
-        for j in g[i]:
-            if explored[j]==0:
-                self.dfs(g,j)
-        t=t+1
-        finished[i]=t
-
-    def topcommon(self, x,y):
-        from collections import Counter
-        c = Counter(x)
-        result = []
-        for number , count in c.most_common(y):
-            result.append(count)
-        return result
-
-
-filename = "C:/Public/Code/scc/scc1.txt"
+filename = "C:/Public/Code/scc/scc.txt"
 obj = findScc(filename)
 if os.path.isfile(filename):
     start = time.time()
@@ -124,7 +164,7 @@ if os.path.isfile(filename):
     print("time taken for Implementing Kosaraju's Algorithm", time.time()-start,"seconds")
 
     print("Size of top 5 strongly connected components:")
-    print(obj.topcommon(list(leader.values()), 5))
+    print(obj.topcommon(list(leader.values()), 10))
 
 else:
     obj.gettingthefile(filename)
