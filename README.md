@@ -55,6 +55,7 @@ Sl no | Program Description                         | Language
 # CREDITS
   - pseudocode : http://users.csc.calpoly.edu/~jdalbey/SWE/pdl_std.html
   - CLRS solutions references : http://clrs.skanev.com/
+  - http://blog.moertel.com/posts/2013-05-11-recursive-to-iterative.html
 
 # Coursera - algorithms-graphs-data-structures
 Suggested Readings :
