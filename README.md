@@ -67,3 +67,7 @@ Suggested Readings :
       - DPV Chapter 3
       - KT Chapter 3, Section 3.5, 3.6
       - SW Chapter 4, Section 4.1,4.2
+  + **Heaps and Binary search trees**
+    - CLRS Chapter 6,11,12,13
+    - DPV Section 4.5
+    - SW Section 3.3, 3.4
