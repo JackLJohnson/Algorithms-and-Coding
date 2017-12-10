@@ -71,3 +71,7 @@ Suggested Readings :
     - CLRS Chapter 6,11,12,13
     - DPV Section 4.5
     - SW Section 3.3, 3.4
+
+# Legacy Shortest path algorithms
+ + Dijkstra's [Faster, More thought involved, needs D's greedy criterion]
+ + Bellmanford [O(VE), slower but simpler, can get negative weigths also]    
