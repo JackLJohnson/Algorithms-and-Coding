@@ -75,3 +75,10 @@ Suggested Readings :
 # Legacy Shortest path algorithms
  + Dijkstra's [Faster, More thought involved, needs D's greedy criterion]
  + Bellmanford [O(VE), slower but simpler, can get negative weigths also]    
+
+# Coursera 2SUM Problem
+ + Tried this using hashmap/Dictionary. improved the O(n^2) solution a bit by breaking immediately as we find a solution pair, removed all duplicates
+
+        Size of the hashtable 999752
+        427
+        [Finished in 4722.281s]     
