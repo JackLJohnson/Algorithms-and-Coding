@@ -89,3 +89,19 @@ Suggested Readings :
         Size of samples 1000000
         427
         [Finished in 4.331s]
+
+# OA Amzn
+
+  + Though process for subsequence problem : [a,b,c,a,b,c,a,d,e,d,e,f,d,g,h,i,g,h,i,g,l]
+
+            Keep Extracting from the list given and pushing the new values into a queue or a list .
+            A = queue.Queue.()
+            B = Left out of the sequence
+            if set(A)&set(B) :
+                keep pushing as still we have the original values inside the queue
+            else :
+                Nothing is similar between the pushed seq(A) and the left sequences(B) , so you have got the complete sequence, clean the queue and increment counter
+                You can store the sequence somewhere also like a list of lists
+            return (final value of the counter)
+
+            For the case when the sequence is [a, a, a], you will never reach the else part , for that case you would need to check this case.

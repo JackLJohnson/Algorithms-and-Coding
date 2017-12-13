@@ -3,6 +3,7 @@
 - Finding shortest path in case of negative weights
 - check if there is a negative path present
 - Maximum complexilty O(VE)
+- Try to check memoization
 - eg: https://www.youtube.com/channel/UC6-g6xhqyX14ENhZBC2fznw/videos
 '''
 class bellmanford(object):
@@ -12,7 +13,7 @@ class bellmanford(object):
     def traverse(self,g,s,t):
         nodes = g.keys()
         d={}
-        pi={}
+        pi={} #Storing the previous node
 
         for node in g:
             if node==s:d[node]=0
