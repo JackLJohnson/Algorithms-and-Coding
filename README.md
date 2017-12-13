@@ -77,8 +77,15 @@ Suggested Readings :
  + Bellmanford [O(VE), slower but simpler, can get negative weigths also]    
 
 # Coursera 2SUM Problem
+
  + Tried this using hashmap/Dictionary. improved the O(n^2) solution a bit by breaking immediately as we find a solution pair, removed all duplicates
 
         Size of the hashtable 999752
         427
-        [Finished in 4722.281s]     
+        [Finished in 4722.281s]
+
++ After changing the logic , using the bisect module we can reduce the time crazy good , we find the leftmost and rightmost insert index as the samples array is already sorted for us , so we only need to look at that part of the array
+
+        Size of samples 1000000
+        427
+        [Finished in 4.331s]
