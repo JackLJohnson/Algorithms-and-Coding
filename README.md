@@ -90,13 +90,14 @@ Suggested Readings :
         427
         [Finished in 4.331s]
 
-# OA Amzn
+# OA Amzn [Qualified]
 
   + Though process for subsequence problem : [a,b,c,a,b,c,a,d,e,d,e,f,d,g,h,i,g,h,i,g,l]
 
             Keep Extracting from the list given and pushing the new values into a queue or a list .
+            Use while loop to shorten up the stack or can also use a for loop
             A = queue.Queue.()
-            B = Left out of the sequence
+            B = Left out of the sequence/stack
             if set(A)&set(B) :
                 keep pushing as still we have the original values inside the queue
             else :
@@ -105,3 +106,8 @@ Suggested Readings :
             return (final value of the counter)
 
             For the case when the sequence is [a, a, a], you will never reach the else part , for that case you would need to check this case.
+
+# Text Justification [Level - Difficult]
+
+ + Tried the Bottom Up approach , with O(n2) Time complexity , taken help for logic : https://www.youtube.com/watch?v=RORuwHiblPc
+ + Next try memoization/top down approach ie, based on the MIT lecture
