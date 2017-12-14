@@ -92,7 +92,7 @@ Suggested Readings :
 
 # OA Amzn [Qualified]
 
-  + Though process for subsequence problem : [a,b,c,a,b,c,a,d,e,d,e,f,d,g,h,i,g,h,i,g,l]
+  + Though process for subsequence problem : [a,b,c,a,b,c,a,d,e,d,e,f,d,g,h,i]
 
             Keep Extracting from the list given and pushing the new values into a queue or a list .
             Use while loop to shorten up the stack or can also use a for loop
@@ -106,6 +106,27 @@ Suggested Readings :
             return (final value of the counter)
 
             For the case when the sequence is [a, a, a], you will never reach the else part , for that case you would need to check this case.
+            ```
+            from collections import deque
+            class Solution(object):
+                """docstring for Solution."""
+                def __init__(self):
+                    super(Solution, self).__init__()
+
+                def uniqueseq(self, seq):
+                    q,stack,res = deque(seq),[],[]
+                    while q:
+                        stack.append(q.popleft())
+                        if not (set(stack)&set(q)):
+                            res.append(stack)
+                            stack = []
+                    return(len(res))
+            obj = Solution()
+            seq = ['a','b','c','a','b','c','a','d','e','d','e','f','d','g','h','i','g']
+            #seq = ['a','a','a']
+            print(obj.uniqueseq(seq))
+            ```
+
 
 # Text Justification [Level - Difficult]
 
