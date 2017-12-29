@@ -136,3 +136,17 @@ Suggested Readings :
 # TopologicalSort
  + Added Recurssive reverse DFS  to solve - try 1
  + Non Recurssive based on Kahn's approach - try 2
+
+# Karatsuba recurssion for multiplying large numbers
+ + https://en.wikipedia.org/wiki/Karatsuba_algorithm
+```
+def karatsuba(num1, num2):
+  if len(num1)==1 or len(num2)==1:return num1*num2
+  else:
+    mid=max(len(num1),len(num2))/2
+    a,b,c,d = num1 // 10^mid , num1%10^mid ,num2 // 10^mid , num2%10^mid
+    ac = Karatsuba(a,c)
+    bd = karatsuba(b,d)
+    z = karatsuba(a+b, c+d) - ac - bd
+    return (ac*10^(2*mid))+(z*10^(mid))+(bd)  
+```
