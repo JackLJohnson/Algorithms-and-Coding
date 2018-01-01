@@ -4,6 +4,7 @@ Construct a BST given a PreOrder and a Inorder traversal
  - Lets say the PreOrder and Inorder are lists
  - Leetcode problem - 105
  - https://discuss.leetcode.com/topic/21287/python-short-recursive-solution
+ - Leetcode Problem - 106
 '''
 class Node(object):
     """docstring for Tree."""
@@ -41,8 +42,18 @@ class Construct(object):
             root.right = self.buildTree2(preorder, inorder[ind+1:])
             return root
 
+    def buildTree3(self, inorder, postorder):
+        if inorder:
+            ind=inorder.index(postorder.pop())
+            root=Node(inorder[ind])
+            root.right=self.buildTree3(inorder[ind+1:],postorder)
+            root.left=self.buildTree3(inorder[0:ind],postorder)
+            return root
+
 obj=Construct()
 preorder=['A','B','D','F','G','E','C']
 inorder= ['F','D','G','B','E','A','C']
-res=obj.buildTree2(preorder,inorder)
+postorder=['F','G','D','E','B','C','A']
+#res=obj.buildTree2(preorder,inorder)
+res=obj.buildTree3(inorder,postorder)
 print(res.data,res.left.data,res.right.data)

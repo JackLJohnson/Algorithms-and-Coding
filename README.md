@@ -150,3 +150,8 @@ def karatsuba(num1, num2):
     z = karatsuba(a+b, c+d) - ac - bd
     return (ac*10^(2*mid))+(z*10^(mid))+(bd)  
 ```
+
+# Constructing a Binary Search tree for the given three Orders
+  + Given Preorder , Postorder
+  + Given Inorder ,  Preorder
+  + Given Inorder ,  Postorder
