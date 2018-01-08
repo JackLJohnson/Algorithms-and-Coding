@@ -163,3 +163,7 @@ def karatsuba(num1, num2):
  + http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15451-f13/www/
 
 ## CountInversions in a list using MergeSort
+
+## GG
+  + BackTracking
+    + SumString Problem , https://www.geeksforgeeks.org/check-given-string-sum-string/
