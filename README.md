@@ -155,3 +155,11 @@ def karatsuba(num1, num2):
   + Given Preorder , Postorder
   + Given Inorder ,  Preorder
   + Given Inorder ,  Postorder
+
+# Very Nice Explaination of the Kosaraju's Algorithm for finding the SCCs .
+ + http://theory.stanford.edu/~tim/w11/l/scc.pdf
+
+# Great Algorithm Course
+ + http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15451-f13/www/
+
+## CountInversions in a list using MergeSort

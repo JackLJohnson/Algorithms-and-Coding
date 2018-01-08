@@ -30,5 +30,6 @@ class MergeSort(object):
         return res
 
 obj = MergeSort()
-arr = [3,4,5,1,2,8,3,7,6]
+#arr = [3,4,5,1,2,8,3,7,6]
+arr = [6,5,4,3,2,1]
 print(obj.mergeSort(arr))
