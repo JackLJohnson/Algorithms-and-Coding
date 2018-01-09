@@ -163,6 +163,11 @@ def karatsuba(num1, num2):
  + http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15451-f13/www/
 
 ## CountInversions in a list using MergeSort
+  ```
+  Output:
+  [1--100000], 2407905288)
+  The time taken : 2.0174179077148438
+  ```
 
 ## GG
   + BackTracking
