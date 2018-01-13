@@ -1,5 +1,7 @@
 '''
 QuickSort
+1. Ans: 162085
+2. Ans:
 '''
 import urllib.request as url1
 import os
@@ -34,29 +36,55 @@ class Quicksort(object):
 
 
     def partition(self,arr,l,r):
-        self.comp+=len(arr)-1
+        #self.comp+=len(arr)-1
         #print("comp",self.comp)
         i,p=l+1,arr[l]
         for j in range(l+1,r+1):
+            self.comp+=1
             if arr[j]<p:
                 arr[i],arr[j]=arr[j],arr[i]
                 i+=1
         arr[l],arr[i-1]=arr[i-1],arr[l]
+        print(self.comp)
         return i-1
 
+    def partition_r(self,arr,l,r):
+        #self.comp+=len(arr)-1
+        #print("comp",self.comp)
+        i,p=l-1,arr[r]
+        for j in range(l,r):
+            self.comp+=1
+            if arr[j]<p:
+                i+=1
+                arr[i],arr[j]=arr[j],arr[i]
+        arr[r],arr[i+1]=arr[i+1],arr[r]
+        print(self.comp)
+        return i+1
 
+    def partition2(self,arr,l,r):
+        #self.comp+=len(arr)-1
+        #print("comp",self.comp)
+        i,p=l+1,arr[l]
+        for j in range(l+1,r+1):
+            self.comp+=1
+            if arr[j]<p:
+                arr[i],arr[j]=arr[j],arr[i]
+                i+=1
+        arr[l],arr[i-1]=arr[i-1],arr[l]
+        print(self.comp)
+        return i-1
 
 if __name__=="__main__":
     filename = "C:/Public/Code/testcases/QuickSort.txt"
     obj=Quicksort()
     if os.path.isfile(filename):
-        res=obj.processdata(filename)
-        #res=[3,9,8,4,6,10,2,5,7,1]
+        #res=obj.processdata(filename)
+        res=[3,9,8,4,6,10,2,5,7,1]
         #print(res[0:10],len(res))
         start=time.time()
         print(obj.qsort(res,0,len(res)-1))
         stop=time.time()
-        #print(res)
+        print(res)
         print("Time taken by the program : {}".format(stop-start))
     else:
         obj.gettingthefile(filename)
