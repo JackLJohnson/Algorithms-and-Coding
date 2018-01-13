@@ -173,3 +173,26 @@ def karatsuba(num1, num2):
   + BackTracking
     + SumString Problem , https://www.geeksforgeeks.org/check-given-string-sum-string/
     + permutations of a String problem , Different ways to do it. BFS/DFS/BackTracking
+
+## Algorithms C1W2
+  + Test set 3 (Quicksort)
+
+  ```
+  1. Let 0<α<.5 be some constant (independent of the input array length n). Recall the Partition subroutine employed by the QuickSort algorithm, as explained in lecture. What is the probability that, with a randomly chosen pivot element, the Partition subroutine produces a split in which the size of the smaller of the two subarrays is ≥α times the size of the original array?
+
+  Ans: 1-2α
+
+  2. Now assume that you achieve the approximately balanced splits above in every recursive call --- that is, assume that whenever a recursive call is given an array of length k, then each of its two recursive calls is passed a subarray with length between αk and (1−α)k (where α is a fixed constant strictly between 0 and .5). How many recursive calls can occur before you hit the base case? Equivalently, which levels of the recursion tree can contain leaves? Express your answer as a range of possible numbers d, from the minimum to the maximum number of recursive calls that might be needed.
+
+  Ans: −log(n)/log(α) ≤d≤ −log(n)/log(1−α)
+
+  3. Define the recursion depth of QuickSort to be the maximum number of successive recursive calls before it hits the base case --- equivalently, the number of the last level of the corresponding recursion tree. Note that the recursion depth is a random variable, which depends on which pivots get chosen. What is the minimum-possible and maximum-possible recursion depth of QuickSort, respectively?
+
+  Ans: maximum = O(logn) and minumum = o(n)
+
+  4. Consider a group of k people. Assume that each person's birthday is drawn uniformly at random from the 365 possibilities. (And ignore leap years.) What is the smallest value of k such that the expected number of pairs of distinct people with the same birthday is at least one?
+
+  [Hint: define an indicator random variable for each ordered pair of people. Use linearity of expectation.]
+  
+  Ans:
+  ```
