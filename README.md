@@ -193,6 +193,17 @@ def karatsuba(num1, num2):
   4. Consider a group of k people. Assume that each person's birthday is drawn uniformly at random from the 365 possibilities. (And ignore leap years.) What is the smallest value of k such that the expected number of pairs of distinct people with the same birthday is at least one?
 
   [Hint: define an indicator random variable for each ordered pair of people. Use linearity of expectation.]
-  
+  kC2/365 >= 1
   Ans:
+  ```
+## Randomized selection Algorithm
+  + To Get the ith order statistic
+  ```
+  reselect(A, n, i):
+    if n==1: return A[i]
+    choose pivot at random from A
+    Partition around p
+    let j = new position of the pivot
+    if j==i: return p
+    if j>i
   ```
