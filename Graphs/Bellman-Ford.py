@@ -1,6 +1,7 @@
 '''
 @Bellman-Ford
 - Finding shortest path in case of negative weights
+- This is a directed graph
 - check if there is a negative path present
 - Maximum complexilty O(VE)
 - Try to check memoization
@@ -23,6 +24,7 @@ class bellmanford(object):
         for node, edge in g.items():
             for val in edge:
                 edges[(node,val[0])] = val[1]
+        print(edges)
         for node in g:
             for key,val in edges.items():
                 #relaxation of (u,v) , v is the node , complexilty is  O(VE)
@@ -30,6 +32,7 @@ class bellmanford(object):
                 if tempdist<d[key[1]]:
                     d[key[1]]=tempdist
                     pi[key[1]]=key[0]
+        print("updated d",d)            
         for key, val in edges.items():
             if d[key[0]]+val < d[key[1]]:
                 print("there is a negative edge")
