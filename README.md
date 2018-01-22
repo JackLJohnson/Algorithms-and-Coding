@@ -207,3 +207,20 @@ def karatsuba(num1, num2):
     if j==i: return p
     if j>i
   ```
+
+## ALGO-C3W1 Greedy Algorithms / Minimum Spanning Trees / DP
+  ```
+  SUGGESTED READINGS FOR WEEK 1: Abbreviations in suggested readings refer to the following textbooks:
+
+  CLRS - Cormen, Leiserson, Rivest, and Stein, Introdution to Algorithms (3rd edition)
+  DPV - Dasgupta, Papadimitriou, and Vazirani, Algorithms
+  KT - Kleinberg and Tardos, Algorithm Design
+  SW - Sedgewick and Wayne, Algorithms (4th edition)
+  CLRS: Chapter 16 (Sections 1 and 2) and Chapter 23
+  DPV: Sections 5.1.1, 5.1.2, and 5.1.5
+  KT: Sections 4.1, 4.2, 4.3, and 4.5
+  SW: Section 4.3
+
+  Mathematics for Computer Science (by Eric Lehman and Tom Leighton):
+  https://www.cs.princeton.edu/courses/archive/fall06/cos341/handouts/mathcs.pdf
+  ```
