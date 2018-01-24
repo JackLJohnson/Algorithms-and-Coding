@@ -19,5 +19,5 @@ def romantoint(roman):
         else:sum_+=value
     return sum_
 
-print(inttoroman(4589))
+print(inttoroman(999))
 print(romantoint('XCIX'))
