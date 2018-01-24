@@ -40,8 +40,7 @@ class findScc(object):
     def processdata(self, path):
         file1 = open(path, "r+")
         graph, graphrev = {}, {}
-        for i in range(1, N+1):
-            graph[i], graphrev[i] = [], []
+        for i in range(1, N+1):graph[i], graphrev[i] = [], []
         for line in file1:
             graph[int(line.split(" ")[0].strip())].append(int(line.split(" ")[1].strip()))
             graphrev[int(line.split(" ")[1].strip())].append(int(line.split(" ")[0].strip()))
