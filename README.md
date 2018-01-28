@@ -92,7 +92,7 @@ Suggested Readings :
 
 # OA Amzn [Qualified]
 
-  + Though process for subsequence problem : [a,b,c,a,b,c,a,d,e,d,e,f,d,g,h,i]
+  + Thought process for subsequence problem : [a,b,c,a,b,c,a,d,e,d,e,f,d,g,h,i]
 
             Keep Extracting from the list given and pushing the new values into a queue or a list .
             Use while loop to shorten up the stack or can also use a for loop
@@ -224,3 +224,41 @@ def karatsuba(num1, num2):
   Mathematics for Computer Science (by Eric Lehman and Tom Leighton):
   https://www.cs.princeton.edu/courses/archive/fall06/cos341/handouts/mathcs.pdf
   ```
+
+## Interviews Questions I Faced Recently with my preparations  
+
+  + **System Design**
+   + Design a Netfix like system for video CDN
+    + Server side and client side code to search a video
+    + Discuss a CDN
+    + Discuss a Load Balancer
+    + Discuss Hashing
+    + How to make the CDN faster
+   + Discuss the ways for measuring the performance/tolerance of a System
+
+   + **Programming questions**
+    + LRU cache
+    + Find a matching string , given a grid of Characters
+    + Design a Contact book. :
+      ```
+      Class Contact(object):
+        def __init__(self,fname,lname,number):
+          self.fname = self.fname
+          self.lname = self.lname
+          self.number = self.number
+          self.store = []
+
+        def add_record(self):
+            ##Store the records
+
+        def search_fullcontact(self, string1):
+          # Given the fname or lname , search the full contact
+          # Use Binary search by sortng the saved list with ASCII order
+
+        def search_partial(self, string2):
+          # There can be multiple matches returned here
+      ```
+      + Roman Numerals
+      + Fibonacci with memo
+      + wordbreak problem - needs dp or will be slow iteratively [make valid words]
+      + Delete a leafnode from a binary tree with next pointer
