@@ -6,6 +6,7 @@ class Solution(object):
             if ''.join(val) in s:return True
         return False
 obj=Solution()
-s="udacity"
-t="man"
-print(obj.question1(s,t))
+
+print(obj.question1("udacity","da"))  #True
+print(obj.question1("udacity","man")) #False
+print(obj.question1("udacity",""))    #True

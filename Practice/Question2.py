@@ -19,5 +19,9 @@ class Solution(object):
         return len_res
 
 obj=Solution()
-a="aa"
-print(obj.question2(a))
+
+print(obj.question2("aa")) #2
+print(obj.question2("madam")) #5
+print(obj.question2("okalamadamask")) #7
+print(obj.question2("abcdefg")) #1
+print(obj.question2("")) #0
