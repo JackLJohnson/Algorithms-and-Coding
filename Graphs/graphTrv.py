@@ -4,7 +4,7 @@ Using DFS to traverse a graph
 Use dictionary to implement a graph
 '''
 
-#Forming a Random Connected Undirected graph to teaverse only
+#Forming a Random Connected Undirected graph to traverse only
 class Graph(object):
     """docstring for graph."""
     def __init__(self, graph_dict=None):
